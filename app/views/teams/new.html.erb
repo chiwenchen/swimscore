@@ -1,0 +1,13 @@
+
+<h2>新增一個隊伍</h2>
+
+<div class = "row">
+  <div class = "col-md-2">
+    <%= bootstrap_form_for @team do |f| %>
+      <%= f.text_field :name, label: '隊伍名稱' %>
+      <%= f.text_field :leader, label: '領隊姓名' %>
+      <%= f.submit '建立隊伍' %>
+      <%= link_to '取消', root_path %>
+    <% end %>
+  </div>
+</div>

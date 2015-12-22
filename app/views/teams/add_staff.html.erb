@@ -1,0 +1,62 @@
+<div class = 'well col-md-8 text-center'>
+<h2><%= @team.name%> 成員</h2><hr>
+
+<h5>
+教練人員：
+<% @team.staffs.each do |staff|%>
+  <span class="label label-primary"><%= staff.name if staff.role == 'coach' %></span>
+<% end %>
+</h5>
+
+<div class = 'row'>
+  <div class = 'col-md-5 col-md-offset-3'>
+    <%= bootstrap_form_tag url: "/teams/#{@team.id}/create_staff", layout: :inline do |f| %>
+      <%= f.hidden_field :role, value: 'coach' %>
+      <%= f.text_field :staff, label: '教練' %>
+      <%= f.submit '+'  %>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+
+<h5>
+隨隊人員：
+<% @team.staffs.each do |staff|%>
+  <span class="label label-warning"><%= staff.name if staff.role == 'worker' %></span>
+<% end %>
+</h5>
+
+<div class = 'row'>
+  <div class = 'col-md-5 col-md-offset-3'>
+    <%= bootstrap_form_tag url: "/teams/#{@team.id}/create_staff", layout: :inline do |f| %>
+      <%= f.hidden_field :role, value: 'worker' %>
+      <%= f.text_field :staff, label: '工作人員' %>
+      <%= f.submit '+' %>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+
+<h5>
+選手：
+<% @team.staffs.each do |staff|%>
+  <span class="label label-success"><%= staff.name if staff.role == 'athlete' %></span>
+<% end %>
+</h5>
+
+<div class = 'row'>
+  <div class = 'col-md-5 col-md-offset-3'>
+    <%= bootstrap_form_tag url: "/teams/#{@team.id}/create_staff", layout: :inline do |f| %>
+      <%= f.hidden_field :role, value: 'athlete' %>
+      <%= f.text_field :staff, label: '選手' %>
+      <%= f.submit '+' %>
+    <% end %>
+  </div>
+</div>
+<hr>
+<%= link_to '報名賽事',root_path, class: 'btn btn-success' %>
+<%= link_to '返回',root_path, class: 'btn btn-default' %>
+
+</div>

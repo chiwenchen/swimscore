@@ -1,0 +1,9 @@
+<h2>隊伍清單</h2>
+<hr>
+<% @teams.each do |team| %>
+  隊伍名稱：<%= team.name %><br>
+  領隊：<%= team.leader %><hr>
+<% end %>
+
+<%=link_to '新增隊伍', new_team_path, class: 'btn btn-success' %>
+<%=link_to '回首頁', root_path %>
