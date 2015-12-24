@@ -3,7 +3,7 @@
 
   <%= bootstrap_form_tag url: "/teams/#{@team.id}/apply_event" do |f| %>
     <%= f.collection_select :event, Event.all, :id, :full_name, prompt: "賽事", label: "選擇賽事" %>
-    <%= f.collection_select :athlete, @team.atheletes, :id, :name, {prompt: "參賽選手", label: "選擇參賽選手"} %>
+    <%= f.collection_select :athlete, @athletes, :id, :name, {prompt: "參賽選手", label: "選擇參賽選手"} %>
     <%= f.submit '+ 新增' %>
     <%= link_to '完成報名', root_path, class: 'btn btn-success'  %>
   <% end %>

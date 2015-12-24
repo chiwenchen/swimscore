@@ -24,6 +24,7 @@ class TeamsController < ApplicationController
 
   def assign_event
     @team = Team.find(params[:id])
+    @athletes = @team.athletes
     @assign_event = AssignEvent.new
   end
 

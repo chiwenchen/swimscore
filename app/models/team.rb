@@ -4,7 +4,7 @@ class Team < ActiveRecord::Base
   has_many :staffs #隨隊人員
   has_many :events #比賽項目
 
-  def atheletes
+  def athletes
     self.staffs.where(role: 'athlete')
   end
 end

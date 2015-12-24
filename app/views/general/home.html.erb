@@ -1,5 +1,18 @@
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 <h2>體彩大樂透杯 全國少兒游泳分區賽(廣東賽區)</h2>
 
 <button class= 'btn btn-primary'>成績查詢</button>
 <%= link_to '報名系統', new_team_path, class: 'btn btn-success' %>
-<%= link_to '建立賽事', new_event_path, class: 'btn btn-warning' %>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    賽事管理 <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to '建立新賽事', new_event_path %></li>
+    <li><%= link_to '賽事總覽', events_path %></li>
+    <li role="separator" class="divider"></li>
+    <li><%= link_to '報名隊伍管理', teams_path %></li>
+  </ul>
+</div>

@@ -6,7 +6,9 @@ class Event < ActiveRecord::Base
 
   def create_tracks
     8.times do |track_number|
-      Track.create(number: (track_number.to_i + 1), event: self)
+      Track.create(number: (track_number.to_i + 1), event: self, group: 1)
+      Track.create(number: (track_number.to_i + 1), event: self, group: 2)
+      Track.create(number: (track_number.to_i + 1), event: self, group: 3)
     end
   end
 
@@ -42,7 +44,10 @@ class Event < ActiveRecord::Base
     end
       
     gender + age_range + "歲" + length + "米" + style
-  
+  end
+
+  def athletes
+    staffs
   end
 
 end

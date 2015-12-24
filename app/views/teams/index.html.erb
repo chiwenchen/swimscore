@@ -2,7 +2,10 @@
 <hr>
 <% @teams.each do |team| %>
   隊伍名稱：<%= team.name %><br>
-  領隊：<%= team.leader %><hr>
+  領隊：<%= team.leader %>
+  <%= link_to '隊員管理', add_staff_team_path(id: team.id) %>
+  <%= link_to '報名賽事', assign_event_team_path(id: team.id) %>
+  <hr>
 <% end %>
 
 <%=link_to '新增隊伍', new_team_path, class: 'btn btn-success' %>
