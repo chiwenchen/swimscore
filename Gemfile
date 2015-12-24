@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap_form'
 gem 'rails_12factor'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 
 group :development, :test do
