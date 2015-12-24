@@ -1,6 +1,14 @@
 class Event < ActiveRecord::Base
   has_many :staffs, through: :assign_events
   has_many :assign_events
+  has_many :tracks
+  after_create :create_tracks
+
+  def create_tracks
+    8.times do |track_number|
+      Track.create(number: (track_number.to_i + 1), event: self)
+    end
+  end
 
   def self.style
     [
