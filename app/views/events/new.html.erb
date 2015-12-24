@@ -1,0 +1,9 @@
+<h2>建立新賽事</h2>
+
+<%= bootstrap_form_for @event do |f| %>
+  <%= f.select :age_range, options_for_select(10..29), label: '年齡' %>
+  <%= f.select :length, options_for_select([50,100,200]), label: '長度(米)' %>
+  <%= f.select :style, options_for_select(Event.style), label: '泳式' %>
+  <%= f.select :gender, options_for_select([["男子", "male"],["女子", "female"]]), label: '性別' %>
+  <%= f.submit %>
+<% end %>

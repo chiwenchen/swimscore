@@ -10,9 +10,11 @@ Rails.application.routes.draw do
       get :add_staff
       post :create_staff
       get :assign_event #報名賽事表格
-      post :applu_event #確定報名
+      post :apply_event #確定報名
     end
   end
+
+  resources :events, only: [:index, :new, :create] 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

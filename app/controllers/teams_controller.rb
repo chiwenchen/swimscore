@@ -18,12 +18,18 @@ class TeamsController < ApplicationController
   end
 
   def create_staff
-    Staff.create(name: params[:staff], team_id: params[:id], role: params[:role])
+    Staff.create(name: params[:staff], team_id: params[:id], role: params[:role], gender: params[:gender])
     redirect_to add_staff_team_path(id: params[:id])
   end
 
-  def apply_event
+  def assign_event
+    @team = Team.find(params[:id])
+    @assign_event = AssignEvent.new
+  end
 
+  def apply_event
+    AssignEvent.create(staff_id: params[:athlete], event_id: params[:event])
+    redirect_to assign_event_team_path(id: params[:id])
   end
 
   private

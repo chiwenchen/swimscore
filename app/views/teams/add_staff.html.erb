@@ -47,16 +47,18 @@
 </h5>
 
 <div class = 'row'>
-  <div class = 'col-md-5 col-md-offset-3'>
+  <div class = 'col-md-7 col-md-offset-3'>
     <%= bootstrap_form_tag url: "/teams/#{@team.id}/create_staff", layout: :inline do |f| %>
       <%= f.hidden_field :role, value: 'athlete' %>
       <%= f.text_field :staff, label: '選手' %>
+      <%= f.radio_button :gender, "male", label: "男子" %>
+      <%= f.radio_button :gender, "female", label: "女子" %>
       <%= f.submit '+' %>
     <% end %>
   </div>
 </div>
 <hr>
-<%= link_to '報名賽事',root_path, class: 'btn btn-success' %>
+<%= link_to '報名賽事',assign_event_team_path(id: @team.id), class: 'btn btn-success' %>
 <%= link_to '返回',root_path, class: 'btn btn-default' %>
 
 </div>

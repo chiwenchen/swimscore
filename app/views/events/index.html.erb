@@ -1,0 +1,6 @@
+<% @events.each do |event| %>
+  <%= event.full_name%>
+<% end %>
+<br>
+<%= link_to '新增賽事', new_event_path %>
+<%= link_to '返回', root_path %>
